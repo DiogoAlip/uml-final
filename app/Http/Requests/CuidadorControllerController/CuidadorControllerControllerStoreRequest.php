@@ -16,11 +16,11 @@ class CuidadorControllerControllerStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'string|require',
-            'apellido' => 'string|require',
-            'edad' => 'integer|require',
-            'telefono' => 'string|require',
-            'especialidad' => 'string|require',
+            'nombre' => 'string|required',
+            'apellido' => 'string|required',
+            'edad' => 'integer|required',
+            'telefono' => 'string|required',
+            'especialidad' => 'string|required',
         ];
     }
 
