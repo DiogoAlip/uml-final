@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\AnimalControllerController;
 use App\Http\Controllers\CuidadorControllerController;
 use App\Http\Controllers\RecintoControllerController;
@@ -22,12 +23,6 @@ use App\Http\Controllers\ActividadControllerController;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-
-Route::resource('/AnimalController', AnimalControllerController::class);
-Route::resource('/CuidadorController', CuidadorControllerController::class);
-Route::resource('/RecintoController', RecintoControllerController::class);
-Route::resource('/EspecieController', EspecieControllerController::class);
-Route::resource('/ActividadController', ActividadControllerController::class);
 
 Route::resource('/AnimalController', AnimalControllerController::class);
 Route::resource('/CuidadorController', CuidadorControllerController::class);

@@ -11,13 +11,12 @@ class Cuidador extends Model
         'nombre',
         'apellido',
         'edad',
-        'id',
         'telefono',
         'especialidad',
     ];
 
     public function animals()
     {
-        return $this->hasMany('App\Models\Animal');
+        return $this->hasMany('App\Models\Animal','cuidador_id');
     }
 }

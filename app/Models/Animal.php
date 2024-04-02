@@ -18,17 +18,17 @@ class Animal extends Model
 
     public function especie()
     {
-        return $this->belongsTo('App\Models\Especie');
+        return $this->belongsTo('App\Models\Especie','especie_id');
     }
 
     public function recinto()
     {
-        return $this->belongsTo('App\Models\Recinto');
+        return $this->belongsTo('App\Models\Recinto','recinto_id');
     }
 
     public function cuidador()
     {
-        return $this->belongsTo('App\Models\Cuidador');
+        return $this->belongsTo('App\Models\Cuidador','cuidador_id');
     }
 
     public function actividad()

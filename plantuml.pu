@@ -1,32 +1,31 @@
 @startuml 
 class models.Animal{
     nombre:string
-    edad:int
-    cuidador_id:int 
-    especie_id:int
-    recinto_id:int
-    cuidador_id:int
+    edad:integer
+    cuidador_id:integer 
+    especie_id:integer
+    recinto_id:integer
 }
  
 class models.Cuidador{
     nombre:string
     apellido:string
-    edad:int    id:int
+    edad:integer
     telefono:string
     especialidad:string
 }
 class models.Recinto{
     nombre:string
-    capacidad:int
+    capacidad:integer
 }
 class models.Especie{
     nombre:string
-    recinto_id:int
+    recinto_id:integer
 }
  
 class models.Actividad{
     nombre:string
-    dia:int
+    dia:integer
     horario:string 
     descripcion:text
 }

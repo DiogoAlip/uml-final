@@ -10,8 +10,7 @@ class CreateCuidadors extends Migration{
 			$table->bigIncrements('id');
 			$table->string('nombre');
 			$table->string('apellido');
-			$table->int('edad');
-			$table->int('id');
+			$table->integer('edad');
 			$table->string('telefono');
 			$table->string('especialidad');
 			$table->timestamps();

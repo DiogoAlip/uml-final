@@ -4,6 +4,7 @@ namespace App\Http\Requests\CuidadorControllerController;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\JsonResponse;
+use App\Models\Cuidador;
 
 class CuidadorControllerControllerStoreRequest extends FormRequest
 {
@@ -15,7 +16,11 @@ class CuidadorControllerControllerStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            '' => '',
+            'nombre' => 'string|require',
+            'apellido' => 'string|require',
+            'edad' => 'integer|require',
+            'telefono' => 'string|require',
+            'especialidad' => 'string|require',
         ];
     }
 
@@ -41,6 +46,9 @@ class CuidadorControllerControllerStoreRequest extends FormRequest
      */
     public function response(): JsonResponse
     {
-        // your code here
+        $param = $this->input();
+        $cuidador = Cuidador::create($param);
+        
+        return response()->json($param); 
     }
 }

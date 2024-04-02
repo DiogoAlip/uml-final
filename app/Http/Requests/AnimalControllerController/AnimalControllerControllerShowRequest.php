@@ -4,6 +4,7 @@ namespace App\Http\Requests\AnimalControllerController;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\JsonResponse;
+use App\Models\Animal;
 
 class AnimalControllerControllerShowRequest extends FormRequest
 {
@@ -41,6 +42,8 @@ class AnimalControllerControllerShowRequest extends FormRequest
      */
     public function response(): JsonResponse
     {
-        // your code here
+        $animal_id = $this->route('AnimalController');
+        $animal = Animal::find($animal_id);
+        return response()->json($animal_id);
     }
 }

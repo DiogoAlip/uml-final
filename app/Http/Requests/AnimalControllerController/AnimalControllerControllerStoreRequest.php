@@ -4,6 +4,7 @@ namespace App\Http\Requests\AnimalControllerController;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\JsonResponse;
+use App\Models\Animal;
 
 class AnimalControllerControllerStoreRequest extends FormRequest
 {
@@ -15,7 +16,8 @@ class AnimalControllerControllerStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            '' => '',
+            'nombre' => 'string|require',
+            'edad' => 'integer|require',
         ];
     }
 
@@ -41,6 +43,9 @@ class AnimalControllerControllerStoreRequest extends FormRequest
      */
     public function response(): JsonResponse
     {
-        // your code here
+        $param = $this->input();
+        $animal = Animal::create($param);
+        
+        return response()->json($animal); 
     }
 }

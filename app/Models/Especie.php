@@ -14,11 +14,11 @@ class Especie extends Model
 
     public function animals()
     {
-        return $this->hasMany('App\Models\Animal');
+        return $this->hasMany('App\Models\Animal','especie_id');
     }
 
     public function recinto()
     {
-        return $this->belongsTo('App\Models\Recinto');
+        return $this->belongsTo('App\Models\Recinto','recinto_id');
     }
 }

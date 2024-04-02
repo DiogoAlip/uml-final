@@ -14,11 +14,11 @@ class Recinto extends Model
 
     public function especies()
     {
-        return $this->hasMany('App\Models\Especie');
+        return $this->hasMany('App\Models\Especie','recinto_id');
     }
 
     public function animals()
     {
-        return $this->hasMany('App\Models\Animal');
+        return $this->hasMany('App\Models\Animal','recinto_id');
     }
 }
