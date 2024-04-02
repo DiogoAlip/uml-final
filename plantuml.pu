@@ -1,58 +1,55 @@
 @startuml 
-class Animal{
-    id:int
+class models.Animal{
     nombre:string
-    cuidador:string 
+    edad:int
+    cuidador_id:int 
     especie_id:int
     recinto_id:int
+    cuidador_id:int
 }
  
-class Cuidador{
-    id:int
+class models.Cuidador{
     nombre:string
-    
+    apellido:string
+    edad:int    id:int
+    telefono:string
+    especialidad:string
 }
-class Recinto{
-    id:int
+class models.Recinto{
     nombre:string
+    capacidad:int
 }
-class Especie{
-    id:int
+class models.Especie{
     nombre:string
     recinto_id:int
 }
  
-class Actividad{
-    id:int
+class models.Actividad{
     nombre:string
     dia:int
     horario:string 
     descripcion:text
-
 }
 
-class ActividadAnimal{
-    actividad_id:int
-    animal_id:int
+class controllers.AnimalController{
+    resource()
 }
-class EspecieCuidador{
-    cuidador_id:int
-    especie_id:int
+class controllers.CuidadorController{
+    resource()
+}
+class controllers.RecintoController{
+    resource()
+}
+class controllers.EspecieController{
+    resource()
+}
+class controllers.ActividadController{
+    resource()
 }
 
-
-
-
- 
- 
-Actividad  "1"--"*" ActividadAnimal
-ActividadAnimal "*"--"1" Animal 
-Cuidador "1"--"*" EspecieCuidador
-Especie "1"--"*" EspecieCuidador
-Especie "1"--"*" Animal
-Recinto "1"--"*" Especie 
-
-Recinto "1"--"*" Animal
-
-
+models.Especie "1"*--"*" models.Animal
+models.Recinto "1"--"*" models.Especie
+models.Recinto "1"*--"*" models.Animal
+models.Cuidador "1"*--"*" models.Animal
+models.Actividad "1"*--"*" models.Animal
 @enduml
