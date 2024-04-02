@@ -21,13 +21,13 @@ use App\Http\Controllers\ActividadControllerController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-
 Route::resource('/AnimalController', AnimalControllerController::class);
 Route::resource('/CuidadorController', CuidadorControllerController::class);
 Route::resource('/RecintoController', RecintoControllerController::class);
 Route::resource('/EspecieController', EspecieControllerController::class);
 Route::resource('/ActividadController', ActividadControllerController::class);
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+
     return $request->user();
 });

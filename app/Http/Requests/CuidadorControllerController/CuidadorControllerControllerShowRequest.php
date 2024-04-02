@@ -4,6 +4,7 @@ namespace App\Http\Requests\CuidadorControllerController;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\JsonResponse;
+use App\Models\Cuidador;
 
 class CuidadorControllerControllerShowRequest extends FormRequest
 {
@@ -41,6 +42,8 @@ class CuidadorControllerControllerShowRequest extends FormRequest
      */
     public function response(): JsonResponse
     {
-        // your code here
+        $cuidador_id = $this->route('CuidadorController');
+        $cuidador = Cuidador::find($cuidador_id);
+        return response()->json($cuidador);
     }
 }
